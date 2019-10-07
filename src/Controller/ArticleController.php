@@ -2,15 +2,15 @@
 
 namespace App\Controller;
 
-use App\Services\MarkdownHelper;
+use App\Service\MarkdownHelper;
 use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Cache\Adapter\AdapterInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 
 class ArticleController extends AbstractController
 {
+
     /**
      * @Route("/", name="app_homepage")
      * */
