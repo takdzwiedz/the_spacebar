@@ -5,7 +5,6 @@ namespace App\Controller;
 
 
 use App\Entity\Article;
-
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -43,7 +42,7 @@ EOF
             );
         // Publish most articles
         if(rand(1,10) > 2) {
-            $article->setPublishedAt(new \DateTime(sprintf('-%days', rand(1,100))));
+            $article->setPublishedAt(new \DateTime(sprintf('-%d days', rand(1, 100))));
         }
 
         $em->persist($article);
@@ -52,7 +51,7 @@ EOF
         return new Response(sprintf(
             'Hiya! New article id: #%d slug: %s',
             $article->getId(),
-            $article->getSlug(),
+            $article->getSlug()
         ));
     }
 }
