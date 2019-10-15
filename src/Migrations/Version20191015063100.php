@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20191014191405 extends AbstractMigration
+final class Version20191015063100 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,8 +22,7 @@ final class Version20191014191405 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE article ADD created_at DATETIME DEFAULT NULL, ADD updated_at DATETIME DEFAULT NULL');
-        $this->addSql('UPDATE article SET created_at = NOW(), updated_at = NOW()');
+        $this->addSql('ALTER TABLE article ADD created_at DATETIME NOT NULL, ADD updated_at DATETIME NOT NULL');
     }
 
     public function down(Schema $schema) : void
