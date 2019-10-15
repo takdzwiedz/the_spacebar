@@ -26,7 +26,7 @@ class Comment
     /**
      * @ORM\Column(type="text")
      */
-    private $textField;
+    private $content;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Article", inversedBy="comments")
@@ -51,14 +51,14 @@ class Comment
         return $this;
     }
 
-    public function getTextField(): ?string
+    public function getContent(): ?string
     {
-        return $this->textField;
+        return $this->content;
     }
 
-    public function setTextField(string $textField): self
+    public function setContent(string $content): self
     {
-        $this->textField = $textField;
+        $this->content = $content;
 
         return $this;
     }
